@@ -11,7 +11,7 @@ CREATE TABLE clientes (
     direccion TEXT
 );
 
--- 2. Tabla de Vehículos (Relacionada con Clientes)
+-- 2. Tabla de Vehículos 
 CREATE TABLE vehiculos (
     id_vehiculo INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT,
@@ -39,7 +39,7 @@ CREATE TABLE repuestos (
     precio_unitario DECIMAL(10,2) NOT NULL
 );
 
--- 5. Tabla de Órdenes de Trabajo (Cabecera)
+-- 5. Tabla de Órdenes de Trabajo 
 CREATE TABLE ordenes_trabajo (
     id_orden INT AUTO_INCREMENT PRIMARY KEY,
     id_vehiculo INT,
@@ -52,7 +52,7 @@ CREATE TABLE ordenes_trabajo (
     FOREIGN KEY (id_mecano) REFERENCES mecanicos(id_mecano)
 );
 
--- 6. Tabla de Detalles de Repuestos usados por Orden (Relación N:M)
+-- 6. Tabla de Detalles de Repuestos usados por Orden 
 CREATE TABLE detalle_orden_repuestos (
     id_detalle INT AUTO_INCREMENT PRIMARY KEY,
     id_orden INT,
